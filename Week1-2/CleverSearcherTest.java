@@ -16,6 +16,12 @@ public class CleverSearcherTest extends SearcherTest{
         return new CleverSearcher(array, index);
     }
 
+    /**
+     * Test that the searcher handles invalid indexes correctly.
+     * 
+     * @param arraySize the size of the random listing to be generated (the "n" value)
+     * @param index the index (invalid indexes are less than or equal to 0 or greater than the array size)
+     */
     private void outOfBoundsTest(int arraySize,int index){
         ArrayGenerator generator = new CleverRandomListingGenerator(arraySize);
         Searcher search = createSearcher(generator.getArray(), index);
